@@ -1,0 +1,24 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Listado Alumnos</title>
+    <h1>Listado Alumnos</h1>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Alumnos:</th>
+        </tr>
+
+        {% for alumn in alumns %}
+        <tr>
+            <td>{{alumn.Nombre}}</td>
+        </tr>
+
+        {% empty %}
+        <h3>No tiene alumnos asignados</h3>
+
+        {% endfor %}
+
+    </table>
+</body>
