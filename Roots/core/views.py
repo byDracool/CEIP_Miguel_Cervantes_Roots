@@ -2,23 +2,10 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from .models import Alumn
-from django.contrib.auth.views import LoginView
-from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 
 
-class Login(LoginView):
-    template_name = 'core/login.html'
-    fields = '__all__'
-    redirect_authenticated_user = True
-
-    def get_success_url(self):
-        return reverse_lazy('home')
-
-#@login_required
-def user_logout(request):
-    logout(request)
-    return render(request, 'logout.html', {})
-
+@login_required
 def home(request):
     return render(request, "core/home.html")
 

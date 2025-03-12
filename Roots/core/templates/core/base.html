@@ -1,0 +1,24 @@
+{% load static %}
+<div>
+    <a href="https://site.educa.madrid.org/cp.cervantes.trescantos/">
+        <img class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'core//Logo_Miguel_Cervantes.jpg' %}"></a>
+    <p>Hola {{request.user|title}}</p>
+</div>
+{% if request.user.is_authenticated %}
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    <a href="{% url 'home' %}"><button type="submit">Inicio</button></a>
+{% else %}
+<!--    <a href="{% url 'login' %}">Acceder</a>-->
+    <a href="{% url 'login' %}"><button type="submit">Acceder</button></a>
+{% endif %}
+<hr>
+
+{% block content %}{% endblock %}
+
+
+<footer class="mt-auto text-white-50">
+    <p class="mt-5 mb-3 text-muted">Carlos Terrez &copy; 2025</p>
+</footer>

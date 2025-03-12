@@ -22,6 +22,7 @@ urlpatterns = [
     #Core paths
     path('', include('core.urls')),
     path('datawizard/', include('data_wizard.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     #Admin's paths
     path('admin/', admin.site.urls),
 ]

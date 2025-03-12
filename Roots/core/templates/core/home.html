@@ -1,17 +1,26 @@
-<div>
-    <p>Hola {{request.user|title}}</p>
-</div>
-{% if request.user.is_authenticated %}
-    <a href="{% url 'logout' %}">Salir</a>
-{% else %}
-    <a href="{% url 'login' %}">Acceder</a>
-{% endif %}
-<hr>
+{% extends 'core/base.html' %}
+{% block content %}
+<!--<div>-->
+<!--    <p>Hola {{request.user|title}}</p>-->
+<!--</div>-->
+<!--{% if request.user.is_authenticated %}-->
+<!--    <form method="post" action="{% url 'logout' %}">-->
+<!--        {% csrf_token %}-->
+<!--        <button type="submit" class="nav-link bg-danger ms-2">Logout</button>-->
+<!--    </form>-->
+<!--{% else %}-->
+<!--    <a href="{% url 'login' %}">Acceder</a>-->
+<!--{% endif %}-->
+<!--<hr>-->
 
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
-<h1>Home</h1>
+    <h1>Home</h1>
+<a href="{% url 'alumns' %}"><button type="submit">Alumnos</button></a>
 </body>
+
+
+{% endblock %}

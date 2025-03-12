@@ -1,0 +1,39 @@
+<!--{% extends "core.html" %}-->
+
+<!--{% block title %}-->
+<!--Logged Out-->
+<!--{% endblock title %}-->
+
+<!--{% block content %}-->
+
+<!--<div>-->
+<!--    <h2>Sign Out</h2>-->
+<!--    <form action="{% url 'logout' %}" method="POST" class="form-group my-3 col-6">-->
+<!--        {% csrf_token %}-->
+
+<!--        {% if messages %}-->
+<!--        {% for message in messages %}-->
+
+<!--        <div class="alert-->
+<!--        {% if message.tags == 'error' %} alert-danger-->
+<!--        {% elif message.tags == 'success' %} alert-success-->
+<!--        {% else %} alert-warning-->
+<!--        {% endif %} alert-dismissible fade show"-->
+<!--         role="alert">-->
+<!--            {{ message }}-->
+<!--            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+<!--        </div>-->
+
+<!--        {% endfor %}-->
+<!--        {% endif %}-->
+
+<!--        <button type="submit" class="btn btn-primary">Logout</button>-->
+<!--    </form>-->
+<!--</div>-->
+<!--{% endblock content %}-->
+
+
+{% csrf_token %}
+<h1>You have been logged out!</h1>
+<p>Thank you for using our app. You have been successfully logged out.</p>
+<a href="{% url 'login' %}">Click here to log in again</a>
