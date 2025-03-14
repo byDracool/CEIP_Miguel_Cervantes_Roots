@@ -6,13 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="b6c8490b-a44f-4a52-b229-366ffc193f79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/Roots/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/Roots/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/Roots/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/Roots/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/static/core/Logo_Miguel_Cervantes.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/static/core/Logo_Miguel_Cervantes.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/static/core/Foto_alumno.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/static/core/Logo_Miguel_Cervantes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/accede.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/accede.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumns.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumns.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/califications.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/califications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/economy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/economy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/external_tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/external_tests.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/logout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/parents_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/parents_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/db.sqlite3" afterDir="false" />
@@ -45,16 +49,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/PycharmProjects/CEIP_Miguel_Cervantes_Roots",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PycharmProjects/CEIP_Miguel_Cervantes_Roots&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PycharmProjects\CEIP_Miguel_Cervantes_Roots\Roots\core\templates\core" />

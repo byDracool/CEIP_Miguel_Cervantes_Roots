@@ -1,24 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
 {% load static %}
-<div>
-    <a href="https://site.educa.madrid.org/cp.cervantes.trescantos/">
-        <img class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'core//Logo_Miguel_Cervantes.jpg' %}"></a>
-    <p>Hola {{request.user|title}}</p>
-</div>
-{% if request.user.is_authenticated %}
-    <form method="post" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-    </form>
-    <a href="{% url 'home' %}"><button type="submit">Inicio</button></a>
-{% else %}
-<!--    <a href="{% url 'login' %}">Acceder</a>-->
-    <a href="{% url 'login' %}"><button type="submit">Acceder</button></a>
-{% endif %}
+<head>
+    <!-- Styles -->
+    <link rel="icon" type="ico" href="{% static 'core/images/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/main.css' %}">
+
+    <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: #900000;
+      text-align: center;
+      padding: 7px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      text-decoration: underline;
+    }
+
+    .active {
+      background-color: #04AA6D;
+    }
+
+    section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: left;
+        gap: 40px;
+    }
+
+    </style>
+
+</head>
+
+<body>
+<!--    <h6>Hola {{request.user|title}},</h6>-->
+    <div class="flex-container-login">
+        {% if request.user.is_authenticated %}
+            <p style = "text-align: right">Hola {{request.user|title}},</p>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button style="float:right" type="submit" class="logout-button">Logout</button>
+            </form>
+
+        {% else %}
+<!--            <a href="{% url 'login' %}">Acceder</a>-->
+<!--            <a href="{% url 'login' %}"><button style="float:right" type="submit" class=logout-button">Acceder</button></a>-->
+        {% endif %}
+    </div>
+
+    <div>
+        {% if request.path != '/' and request.path != '/accounts/login/' %}
+            <ul class="navbar">
+                <li><a href="https://site.educa.madrid.org/cp.cervantes.trescantos/" target="_blank" >
+                    <img alt="Logo Cervantes" class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'core/images/Logo_Miguel_Cervantes.jpg' %}"></a>
+                </li>
+                <li style="float:right"><a href="{% url 'accede' %}" class="{% if request.path == '/accede/' %}current-page{% endif %}">Accede</a></li>
+                <li style="float:right"><a href="{% url 'economy' %}" class="{% if request.path == '/economy/' %}current-page{% endif %}">Gestión económica</a></li>
+                <li style="float:right"><a href="{% url 'parents_contact' %}" class="{% if request.path == '/parents_contact/' %}current-page{% endif %}">Contacto Alumnos</a></li>
+                <li style="float:right"><a href="{% url 'califications' %}" class="{% if request.path == '/califications/' %}current-page{% endif %}">Calificaciones</a></li>
+                <li style="float:right"><a href="{% url 'external_tests' %}" class="{% if request.path == '/external_tests/' %}current-page{% endif %}">Pruebas externas</a></li>
+                <li style="float:right"><a href="{% url 'alumns' %}" class="{% if request.path == '/alumns/' %}current-page{% endif %}">Alumnos</a></li>
+                <li style="float:right"><a href="{% url 'home' %}">Home</a></li>
+            </ul>
+        {% else %}
+            <section>
+                <a href="https://site.educa.madrid.org/cp.cervantes.trescantos/" target="_blank" >
+                        <img alt="Logo Cervantes" class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'core/images/Logo_Miguel_Cervantes.jpg' %}"></a>
+                <div class="CEIP">CEIP Miguel de Cervantes</div>
+            </section>
+        {% endif %}
+    </div>
+
 <hr>
 
-{% block content %}{% endblock %}
+    {% block content %}{% endblock content %}
 
+    <div style="margin: 60px" class="flex-container">
+        <p> Algún problema? <a href="{% url 'incidences' %}">Contacta con soporte</a></p>
 
-<footer class="mt-auto text-white-50">
-    <p class="mt-5 mb-3 text-muted">Carlos Terrez &copy; 2025</p>
-</footer>
+        <div style="margin: 10px" class="footer-flex-container">
+            <div><a href="https://github.com/byDracool"><img style="width:20px;height:20px;" src="{% static 'core/images/github.png' %}"></a></div>
+            <div><a href="https://carlosterrez.dev/"><img style="width:20px;height:20px;" src="{% static 'core/images/logoCT.png' %}"></a></div>
+            <div><p style="font-size: 14px">Carlos Terrez &copy; 2025</p></div>
+        </div>
+    </div>
+</body>
+</html>

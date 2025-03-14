@@ -1,26 +1,21 @@
 {% extends 'core/base.html' %}
 {% block content %}
-<!--<div>-->
-<!--    <p>Hola {{request.user|title}}</p>-->
-<!--</div>-->
-<!--{% if request.user.is_authenticated %}-->
-<!--    <form method="post" action="{% url 'logout' %}">-->
-<!--        {% csrf_token %}-->
-<!--        <button type="submit" class="nav-link bg-danger ms-2">Logout</button>-->
-<!--    </form>-->
-<!--{% else %}-->
-<!--    <a href="{% url 'login' %}">Acceder</a>-->
-<!--{% endif %}-->
-<!--<hr>-->
+{% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CEIP Miguel de Cervantes</title>
+    </head>
+    <body>
+        <div class="title-container">
+            <h1 style="color:#900000">Bienvenido/a<br>al sistema Raíces</h1>
+            <a href="{% url 'alumns' %}"><button type="submit" class="button btn-outline-danger text-black">Alumnos</button></a>
+            <a href="{% url 'external_tests' %}"><button type="submit" class="button btn-outline-danger text-black">Pruebas externas</button></a>
+            <a href="{% url 'califications' %}"><button type="submit" class="button btn-outline-danger text-black">Calificaciones</button></a>
+            <a href="{% url 'parents_contact' %}"><button type="submit" class="button btn-outline-danger text-black">Contacto alumnos</button></a>
+            <a href="{% url 'economy' %}"><button type="submit" style="background-color: #AAAAAA" class="button btn-outline-danger text-black">Gestión económica</button></a>
+            <a href="{% url 'accede' %}"><button type="submit" style="background-color: #AAAAAA" class="button btn-outline-danger text-black">Accede</button></a>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Home</h1>
-<a href="{% url 'alumns' %}"><button type="submit">Alumnos</button></a>
-</body>
-
-
-{% endblock %}
+        </div>
+    </body>
+{% endblock content %}
