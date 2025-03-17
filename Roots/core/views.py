@@ -1,24 +1,31 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from .models import Alumn
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 
-class AlumnsList(ListView):
+class AlumnList(ListView):
     model = Alumn
-    context_object_name = "alumns_list"
+    context_object_name = "alumn_list"
+
+
+class AlumnDetail(DetailView):
+    model = Alumn
+    context_object_name = "alumn"
+    template_name = "core/alumn.html"
 
 
 @login_required
 def home(request):
     return render(request, "core/home.html")
 
-@login_required
-def alumns(request):
-    alumns_list = Alumn.objects.all()
-    return render(request, "core/alumns.html", {"alumns": alumns_list})
+# @login_required
+# def alumns(request):
+#     alumns_list = Alumn.objects.all()
+#     return render(request, "core/alumns.html", {"alumns": alumns_list})
 
 @login_required
 def external_tests(request):
