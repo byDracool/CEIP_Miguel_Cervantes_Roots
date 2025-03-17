@@ -58,7 +58,7 @@ ROOT_URLCONF = 'Roots.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["D:\\PycharmProjects\\CEIP_Miguel_Cervantes_Roots\\Roots\\core\\templates\\core"],
+        'DIRS': ['C:\\Users\\draco\\Documents\\Programacion\\CEIP_Miguel_Cervantes_Roots\\Roots\\core\\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

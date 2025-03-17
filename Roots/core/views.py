@@ -6,6 +6,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 
+class AlumnsList(ListView):
+    model = Alumn
+    context_object_name = "alumns_list"
+
+
 @login_required
 def home(request):
     return render(request, "core/home.html")
@@ -40,7 +45,5 @@ def incidences(request):
     return render(request, "core/incidences.html")
 
 
-# class AlumnsList(ListView):
-#     model = Alumn
-#     context_object_name = "alumns_list"
+
 
