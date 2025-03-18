@@ -1,7 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.SET_NULL)
+#     grupo = models.CharField(max_length=100, blank=False, null=False)
+
+
 class Alumn(models.Model):
     group_choices = [
         ("1AI", "1_A_infantil"),
@@ -81,3 +86,5 @@ class Alumn(models.Model):
 
     class Meta:
         ordering = ["Grupo", "Nombre"]
+
+

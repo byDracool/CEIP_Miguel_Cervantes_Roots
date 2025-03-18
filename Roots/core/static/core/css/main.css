@@ -23,18 +23,6 @@ body {
     background: #e68a8a !important;
 }
 
-.logout-button {
-    border: 0px;
-    text-decoration: underline;
-    font-size: 12px;
-    background-color: #FFFFFF;
-}
-
-.logout-button:hover {
-    text-decoration: underline;
-    color: blue;
-}
-
 td, th {
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -96,6 +84,13 @@ td, th {
     margin: 0;
     padding: 0;
     font-size: 12px;
+}
+
+.flex-container-login form {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: auto;
 }
 
 .title-container {

@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b6c8490b-a44f-4a52-b229-366ffc193f79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/static/core/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/static/core/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/urls.py" afterDir="false" />

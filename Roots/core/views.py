@@ -8,30 +8,40 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 
-class AlumnList(ListView):
+class TutorsList(LoginRequiredMixin, ListView):
+    context_object_name = "tutors_list"
+    pass
+
+
+class AlumnList(LoginRequiredMixin, ListView):
     model = Alumn
     context_object_name = "alumn_list"
     template_name = 'core/alumn_list.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['alumn_list'] = context['alumn_list'].filter(Grupo=self.request.user)
+        context['count'] = context['alumn_list'].count()
 
-class AlumnDetail(DetailView):
+
+class AlumnDetail(LoginRequiredMixin, DetailView):
     model = Alumn
     context_object_name = "alumn"
     template_name = "core/alumn.html"
 
 
-class AddAlumn(CreateView):
+class AddAlumn(LoginRequiredMixin, CreateView):
     model = Alumn
     fields = '__all__'
     success_url = reverse_lazy("administration")
 
-class EditAlumn(UpdateView):
+class EditAlumn(LoginRequiredMixin, UpdateView):
     model = Alumn
     fields = '__all__'
     success_url = reverse_lazy("administration")
 
 
-class DeleteAlumn(DeleteView):
+class DeleteAlumn(LoginRequiredMixin, DeleteView):
     model = Alumn
     context_object_name = "alumn"
     success_url = reverse_lazy("administration")
@@ -40,11 +50,6 @@ class DeleteAlumn(DeleteView):
 @login_required
 def home(request):
     return render(request, "core/home.html")
-
-# @login_required
-# def alumns(request):
-#     alumns_list = Alumn.objects.all()
-#     return render(request, "core/alumns.html", {"alumns": alumns_list})
 
 @login_required
 def external_tests(request):
@@ -73,6 +78,10 @@ def incidences(request):
 @login_required
 def administration(request):
     return render(request, "core/administration.html")
+
+@login_required
+def register(request):
+    return render(request, "registration/register.html")
 
 
 
