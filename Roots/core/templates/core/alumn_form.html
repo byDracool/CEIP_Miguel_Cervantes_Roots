@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .alumn-form {
+        width: 1200px;
+        border: 2px solid #900000;
+        background-color: #FFFFFF;
+        color: #000000;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        align-items: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="flex-container">
+        <h1>Formulario de creación de alumnos</h1>
+
+        <form class="alumn-form" method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class='button' style="width: 400px; font-size: 18px;" type="submit" value="Crear Alumno">
+            <a href="{% url 'administration' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+                Volver
+            </a>
+        </form>
+    </div>
+</body>
+
+{% endblock content %}

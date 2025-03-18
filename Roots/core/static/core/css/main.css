@@ -20,7 +20,7 @@ body {
 }
 
 .button:hover {
-    background: #e68a8a;
+    background: #e68a8a !important;
 }
 
 .logout-button {
@@ -47,10 +47,6 @@ td, th {
     background: grey;
     table-layout: auto;
     border-collapse: collapse;
-    }
-
-.table-primary {
-    background: #00bef1;
     }
 
 .table-secondary {

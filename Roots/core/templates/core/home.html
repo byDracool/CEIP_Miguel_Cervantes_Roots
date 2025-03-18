@@ -5,6 +5,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>CEIP Miguel de Cervantes</title>
+
+        <style>
+            button {
+                width: 400px;
+                }
+
+            .button:hover {
+                background: #e68a8a !important;
+                }
+
+        </style>
+
     </head>
     <body>
         <div class="title-container">
@@ -15,6 +27,7 @@
             <a href="{% url 'parents_contact' %}"><button type="submit" class="button btn-outline-danger text-black">Contacto alumnos</button></a>
             <a href="{% url 'economy' %}"><button type="submit" style="background-color: #AAAAAA" class="button btn-outline-danger text-black">Gestión económica</button></a>
             <a href="{% url 'accede' %}"><button type="submit" style="background-color: #AAAAAA" class="button btn-outline-danger text-black">Accede</button></a>
+            <a href="{% url 'administration' %}"><button type="submit" style="background-color:#AAAAAA" class="button btn-outline-danger text-black">Administracion de alumnos</button></a>
 
         </div>
     </body>
