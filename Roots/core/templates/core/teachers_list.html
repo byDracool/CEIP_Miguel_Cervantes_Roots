@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Alumnos</title>
+    <title>Profesorado</title>
 
     <style>
       #alumn-link {
@@ -19,43 +19,10 @@
         color: white;
       }
 
-      .find-form {
-            width: 1200px;
-            background-color: #FFFFFF;
-            color: #000000;
-            padding: 10px;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            flex-direction: column;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            align-items: center;
-            }
-
-            input:hover {
-              text-decoration: underline;
-          }
-
-
     </style>
 
   </head>
   <body>
-
-    <br>
-
-    <div class="flex-container">
-        <form class="find-form" method="GET">
-            <input type="text" name="find_area" value="{{finded_value}}" style="width:400px; height:40px;">
-            <input class='button' type="submit" value="Buscar alumno">
-        </form>
-      <p>Total de resultados: {{ count }}</p>
-    </div>
-
-    <br>
-
     <table class="table table-bordered border-dark">
 <!--    <table class="table table-bordered border-secondary">-->
     <thead>
@@ -86,33 +53,35 @@
     </thead>
     <tbody>
 
-    {% for alumno in alumn_list %}
+    {% for teacher in teachers_list %}
       <tr class="table-secondary">
-        <td>{{alumno.Grupo}}</td>
-        <td><a href="{% url 'alumn'  alumno.id  %}" id="alumn-link">{{alumno.Nombre}}</a></td>
-        <td>{{alumno.Fotografia}}</td>
-        <td>{{alumno.Sexo}}</td>
-        <td>{{alumno.Tutor_a}}</td>
-        <td>{{alumno.Observaciones}}</td>
-        <td>{{alumno.PET_KET}}</td>
-        <td>{{alumno.Telefono_contacto_padre}}</td>
-        <td>{{alumno.Nombre_padre}}</td>
-        <td>{{alumno.Email_padre}}</td>
-        <td>{{alumno.Telefono_contacto_madre}}</td>
-        <td>{{alumno.Nombre_madre}}</td>
-        <td>{{alumno.Email_madre}}</td>
-        <td>{{alumno.Personas_autorizadas_recogida}}</td>
-        <td>{{alumno.Comedor}}</td>
-        <td>{{alumno.Alergias}}</td>
-        <td>{{alumno.IBAN}}</td>
-        <td>{{alumno.Titular_cuenta}}</td>
-        <td>{{alumno.Beca_comedor}}</td>
-        <td>{{alumno.Pagos_pendientes}}</td>
-        <td>{{alumno.Adhesion_Accede}}</td>
-        <td>{{alumno.Senal_Accede}}</td>
+        <td>{{teacher.Grupo}}</td>
+        <td>{{teacher.Nombre}}</td>
+        <td>{{teacher.Fotografia}}</td>
+        <td>{{teacher.Sexo}}</td>
+        <td>{{teacher.Tutor_a}}</td>
+        <td>{{teacher.Observaciones}}</td>
+        <td>{{teacher.PET_KET}}</td>
+        <td>{{teacher.Telefono_contacto_padre}}</td>
+        <td>{{teacher.Nombre_padre}}</td>
+        <td>{{teacher.Email_padre}}</td>
+        <td>{{teacher.Telefono_contacto_madre}}</td>
+        <td>{{teacher.Nombre_madre}}</td>
+        <td>{{teacher.Email_madre}}</td>
+        <td>{{teacher.Personas_autorizadas_recogida}}</td>
+        <td>{{teacher.Comedor}}</td>
+        <td>{{teacher.Alergias}}</td>
+        <td>{{teacher.IBAN}}</td>
+        <td>{{teacher.Titular_cuenta}}</td>
+        <td>{{teacher.Beca_comedor}}</td>
+        <td>{{teacher.Pagos_pendientes}}</td>
+        <td>{{teacher.Adhesion_Accede}}</td>
+        <td>{{teacher.Senal_Accede}}</td>
       </tr>
 
     {% endfor %}
+
+
 
     </tbody>
   </table>

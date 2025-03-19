@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+<head>
+  <style>
+        button {
+            width: 400px;
+            }
+
+        .button:hover {
+            background: #e68a8a !important;
+            }
+
+    </style>
+</head>
+
+<body>
+
+<div class="title-container">
+        <h1 style="color:#900000">Gestion del profesorado:</h1>
+        <a href="{% url 'teachers_list' %}"><button type="submit" class="button btn-outline-danger text-black">Listado usuarios</button></a>
+        <a href="{% url 'register' %}"><button type="submit" class="button btn-outline-danger text-black">Registrar nuevo usuario</button></a>
+        <a href=""><button type="submit" class="button btn-outline-danger text-black">Borrar usuario</button></a>
+    </div>
+
+</body>
+
+{% endblock content %}

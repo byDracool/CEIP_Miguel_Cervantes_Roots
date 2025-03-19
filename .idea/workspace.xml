@@ -5,15 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6c8490b-a44f-4a52-b229-366ffc193f79" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/CEIP_Miguel_Cervantes_Roots.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CEIP_Miguel_Cervantes_Roots.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/Roots/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/Roots/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/Roots/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/Roots/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/Roots/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/Roots/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/Roots/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/Roots/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/migrations/0002_alter_alumn_pagos_pendientes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/migrations/0003_alter_alumn_options_alter_alumn_adhesion_accede_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/migrations/0004_alumn_fotografia.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/static/core/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/static/core/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/accede.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/accede.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/administration.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/administration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/califications.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/califications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/economy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/economy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/external_tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/external_tests.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/incidences.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/incidences.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/parents_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/parents_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/tutors.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/teacher_management.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/registration/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/registration/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/registration/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/manage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,19 +75,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/draco/Documents/Programacion/CEIP_Miguel_Cervantes_Roots&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/draco/Documents/Programacion/CEIP_Miguel_Cervantes_Roots/Roots/core/templates/core",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\draco\Documents\Programacion\CEIP_Miguel_Cervantes_Roots\Roots\core\templates\core" />
       <recent name="D:\PycharmProjects\CEIP_Miguel_Cervantes_Roots\Roots\core\templates\core" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
