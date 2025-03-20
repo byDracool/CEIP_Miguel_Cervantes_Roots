@@ -26,9 +26,9 @@
   <div class="flex-container">
     <form class="delete-form"  method="POST">
         {% csrf_token %}
-        <p>Vas a eliminar este alumno: "{{alumn}}"</p>
-        <input class='button' style="width: 400px; font-size: 18px;" type="submit" value="Eliminar">
-        <a href="{% url 'alumns_administration' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+        <p>Vas a eliminar este usuario: "{{user}}"</p>
+        <input class='button' style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;" type="submit" value="Eliminar">
+        <a href="{% url 'teacher_management' %}" class="button" style="width: 400px; font-size: 18px;" >
                   Volver
         </a>
     </form>

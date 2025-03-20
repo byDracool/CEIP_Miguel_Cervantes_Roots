@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+      .user-link {
+            color: #900000;
+        }
+
+      .user-link:visited {
+          color: #900000;
+        }
+
+      th {
+        color: white;
+      }
+
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+        <form class="find-form" method="GET">
+            <input type="text" name="find_area" value="{{finded_value}}" style="width:400px; height:40px;">
+            <input class='button' type="submit" value="Buscar profesor">
+            <a href="{% url 'teacher_management' %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+                Volver
+            </a>
+        </form>
+    </div>
+<br>
+<div class="flex-container">
+    <table class="table table-bordered border-dark">
+    <thead>
+      <tr class="table-primary" style="background: #900000">
+        <th scope="col">Usuarios</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+
+    {% for teacher in teachers_list %}
+      <tr class="table-secondary">
+          <td>
+            <a href="{% url 'user' teacher.id %}" class="user-link" style="margin-right: 15px; font-size: 18px;">{{ teacher.username }}</a>
+
+            <a href="{% url 'edit_user' teacher.id %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; padding: 10px; text-decoration: none; margin-bottom: 10px;">
+                    Editar </a>
+            <a href="{% url 'delete_user' teacher.id %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none; margin-bottom: 10px;">
+                    Eliminar </a>
+            <br>
+          </td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+</body>
+
+{% endblock content %}

@@ -50,6 +50,9 @@
         <form class="find-form" method="GET">
             <input type="text" name="find_area" value="{{finded_value}}" style="width:400px; height:40px;">
             <input class='button' type="submit" value="Buscar alumno">
+            <a href="{% url 'alumns_administration' %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+                Volver
+            </a>
         </form>
       <p>Total de resultados: {{ count }}</p>
     </div>

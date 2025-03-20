@@ -6,13 +6,29 @@
     <title>Alumno</title>
 
     <style>
+        .detail_view {
+        width: 1200px;
+        border: 2px solid #900000;
+        background-color: #FFFFFF;
+        color: #000000;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        align-items: center;
+        }
 
     </style>
 </head>
 <body>
 
     <div class="flex-container">
-        <h1>Alumno: {{alumn}}</h1>
+        <div class="detail_view">
+            <h1>Alumno: {{alumn}}</h1>
 
             <p>Grupo: {{alumno.Grupo}}</p>
             <p>Foto: {{alumn.Fotografia}}</p>
@@ -38,6 +54,7 @@
 
         <a href="{% url 'alumn_list' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
                           Volver</a>
+        </div>
     </div>
 </body>
 {% endblock content %}

@@ -32,7 +32,7 @@
             {% csrf_token %}
             {{form.as_p}}
             <input class='button' style="width: 400px; font-size: 18px;" type="submit" value="Crear Alumno">
-            <a href="{% url 'administration' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+            <a href="{% url 'alumns_administration' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
                 Volver
             </a>
         </form>

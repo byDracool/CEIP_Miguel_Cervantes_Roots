@@ -8,12 +8,7 @@ from django.contrib.auth import login
 from .models import Alumn
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-
-
-class TeachersList(LoginRequiredMixin, ListView):
-    model = Alumn #ESTO HAY QUE CAMBIARLO POR EL USUARIO PERSONALIZADO
-    context_object_name = "teachers_list"
-    template_name = 'core/teachers_list.html'
+from django.contrib.auth.models import User
 
 
 class AlumnList(LoginRequiredMixin, ListView):
@@ -22,7 +17,7 @@ class AlumnList(LoginRequiredMixin, ListView):
     template_name = 'core/alumn_list.html'
 
     def get_queryset(self):
-        """Filtra la lista de alumnos por nombre si se ha introducido un valor en el buscador."""
+        """Filter the list of students by name if a value has been entered in the search bar."""
         queryset = super().get_queryset()
         searched_value = self.request.GET.get('find_area', '').strip()
 
@@ -32,7 +27,7 @@ class AlumnList(LoginRequiredMixin, ListView):
         return queryset
 
     def get_context_data(self, **kwargs):
-        """Añade el número total de resultados y el valor buscado al contexto."""
+        """Add the total number of results and the searched value to the context"""
         context = super().get_context_data(**kwargs)
         context['count'] = context['alumn_list'].count()
         context['searched_value'] = self.request.GET.get('find_area', '').strip()
@@ -65,18 +60,47 @@ class AlumnDetail(LoginRequiredMixin, DetailView):
 class AddAlumn(LoginRequiredMixin, CreateView):
     model = Alumn
     fields = '__all__'
-    success_url = reverse_lazy("administration")
+    success_url = reverse_lazy("alumns_administration")
 
 class EditAlumn(LoginRequiredMixin, UpdateView):
     model = Alumn
     fields = '__all__'
-    success_url = reverse_lazy("administration")
+    success_url = reverse_lazy("alumns_administration")
 
 
 class DeleteAlumn(LoginRequiredMixin, DeleteView):
     model = Alumn
     context_object_name = "alumn"
-    success_url = reverse_lazy("administration")
+    success_url = reverse_lazy("alumns_administration")
+
+
+class TeachersList(LoginRequiredMixin, ListView):
+    model = User
+    context_object_name = "teachers_list"
+    template_name = 'core/teachers_list.html'
+
+    def get_queryset(self):
+        """Filter the list of teachers by username if a value has been entered in the search bar."""
+        queryset = super().get_queryset()
+        searched_value = self.request.GET.get('find_area', '').strip()
+
+        if searched_value:
+            queryset = queryset.filter(username__icontains=searched_value)
+
+        return queryset
+
+    # def get_context_data(self, **kwargs):
+    #     """Añade el número total de resultados y el valor buscado al contexto."""
+    #     context = super().get_context_data(**kwargs)
+    #     context['count'] = context['alumn_list'].count()
+    #     context['searched_value'] = self.request.GET.get('find_area', '').strip()
+    #     return context
+
+
+class UserDetail(LoginRequiredMixin, DetailView):
+    model = User
+    context_object_name = "user"
+    template_name = "core/teacher.html"
 
 
 class UserRegister(LoginRequiredMixin, FormView):
@@ -90,6 +114,20 @@ class UserRegister(LoginRequiredMixin, FormView):
         user.is_active = True
         user.save()
         return super().form_valid(form)
+
+
+class EditUser(LoginRequiredMixin, UpdateView):
+    model = User
+    fields = '__all__'
+    template_name = "core/user_form.html"
+    success_url = reverse_lazy("teacher_management")
+
+
+class DeleteUser(LoginRequiredMixin, DeleteView):
+    model = User
+    context_object_name = "user"
+    template_name = "core/user_confirm_delete.html"
+    success_url = reverse_lazy("teacher_management")
 
 
 @login_required
@@ -121,8 +159,8 @@ def incidences(request):
     return render(request, "core/incidences.html")
 
 @login_required
-def administration(request):
-    return render(request, "core/administration.html")
+def alumns_administration(request):
+    return render(request, "core/alumns_administration.html")
 
 @login_required
 def teacher_management(request):
@@ -131,6 +169,11 @@ def teacher_management(request):
 @login_required
 def register(request):
     return render(request, "registration/register.html")
+
+@login_required
+def edit_delete_user(request):
+    teachers = User.objects.exclude(username="admin")  # Evita mostrar el usuario admin
+    return render(request, "core/edit_delete_user.html", {"teachers_list": teachers})
 
 
 

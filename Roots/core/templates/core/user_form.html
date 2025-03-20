@@ -1,10 +1,8 @@
 {% extends 'core/base.html' %}
 {% block content %}
-{% load static %}
-<head>
-    <style>
 
-      .delete-form {
+  <style>
+        .user-form {
         width: 1200px;
         border: 2px solid #900000;
         background-color: #FFFFFF;
@@ -21,17 +19,18 @@
         }
 
     </style>
-</head>
+
 <body>
   <div class="flex-container">
-    <form class="delete-form"  method="POST">
+    <h2>Editar Usuario</h2>
+    <form method="post" class="user-form">
         {% csrf_token %}
-        <p>Vas a eliminar este alumno: "{{alumn}}"</p>
-        <input class='button' style="width: 400px; font-size: 18px;" type="submit" value="Eliminar">
-        <a href="{% url 'alumns_administration' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
-                  Volver
-        </a>
+        {{ form.as_p }}
+        <button class="button" type="submit">Guardar cambios</button>
     </form>
+    <br>
+    <a href="{% url 'teacher_management' %}" class="button">Cancelar</a>
+
   </div>
 </body>
 

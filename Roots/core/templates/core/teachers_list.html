@@ -7,84 +7,58 @@
     <title>Profesorado</title>
 
     <style>
-      #alumn-link {
+      .user-link {
             color: #900000;
         }
 
-      #alumn-link:visited {
+      .user-link:visited {
           color: #900000;
         }
-
-      th {
-        color: white;
-      }
-
     </style>
 
   </head>
   <body>
-    <table class="table table-bordered border-dark">
-<!--    <table class="table table-bordered border-secondary">-->
-    <thead>
-      <tr class="table-primary" style="background: #900000">
-        <th scope="col">Grupo</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Fotografia</th>
-        <th scope="col">Sexo</th>
-        <th scope="col">Tutor/a</th>
-        <th scope="col">Observaciones</th>
-        <th scope="col">PET/KET</th>
-        <th scope="col">Telefono contacto padre</th>
-        <th scope="col">Nombre padre</th>
-        <th scope="col">E-mail padre</th>
-        <th scope="col">Telefono contacto madre</th>
-        <th scope="col">Nombre madre</th>
-        <th scope="col">E-mail madre</th>
-        <th scope="col">Personas autorizadas recogida</th>
-        <th scope="col">Comedor</th>
-        <th scope="col">Alergias</th>
-        <th scope="col">IBAN</th>
-        <th scope="col">Titular cuenta</th>
-        <th scope="col">Beca comedor</th>
-        <th scope="col">Pagos pendientes meses</th>
-        <th scope="col">Adhesion Accede</th>
-        <th scope="col">Señal Accede</th>
-      </tr>
-    </thead>
-    <tbody>
+    <br>
 
-    {% for teacher in teachers_list %}
-      <tr class="table-secondary">
-        <td>{{teacher.Grupo}}</td>
-        <td>{{teacher.Nombre}}</td>
-        <td>{{teacher.Fotografia}}</td>
-        <td>{{teacher.Sexo}}</td>
-        <td>{{teacher.Tutor_a}}</td>
-        <td>{{teacher.Observaciones}}</td>
-        <td>{{teacher.PET_KET}}</td>
-        <td>{{teacher.Telefono_contacto_padre}}</td>
-        <td>{{teacher.Nombre_padre}}</td>
-        <td>{{teacher.Email_padre}}</td>
-        <td>{{teacher.Telefono_contacto_madre}}</td>
-        <td>{{teacher.Nombre_madre}}</td>
-        <td>{{teacher.Email_madre}}</td>
-        <td>{{teacher.Personas_autorizadas_recogida}}</td>
-        <td>{{teacher.Comedor}}</td>
-        <td>{{teacher.Alergias}}</td>
-        <td>{{teacher.IBAN}}</td>
-        <td>{{teacher.Titular_cuenta}}</td>
-        <td>{{teacher.Beca_comedor}}</td>
-        <td>{{teacher.Pagos_pendientes}}</td>
-        <td>{{teacher.Adhesion_Accede}}</td>
-        <td>{{teacher.Senal_Accede}}</td>
-      </tr>
+    <div class="flex-container">
+        <form class="find-form" method="GET">
+            <input type="text" name="find_area" value="{{finded_value}}" style="width:400px; height:40px;">
+            <input class='button' type="submit" value="Buscar profesor">
+            <a href="{% url 'teacher_management' %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+                Volver
+            </a>
+        </form>
+    </div>
 
-    {% endfor %}
+    <br>
 
+    <div class="flex-container">
+      <table class="table table-bordered border-dark">
+      <thead>
+        <tr class="table-primary" style="background: #900000">
+          <th scope="col" style="color:white;">Username</th>
+  <!--        <th scope="col">Nombre</th>-->
+  <!--        <th scope="col">Fotografia</th>-->
+        </tr>
+      </thead>
+      <tbody>
 
+      {% for teacher in teachers_list %}
+        {% if teacher.username != "admin" %}
 
-    </tbody>
-  </table>
+          <tr class="table-secondary">
+            <td><a href="{% url 'user' teacher.id %}" class="user-link">{{ teacher.username }}</a></td>
+    <!--        <td>{{teacher.Nombre}}</td>-->
+    <!--        <td>{{teacher.Fotografia}}</td>-->
+          </tr>
+        {% endif %}
+
+      {% endfor %}
+
+      </tbody>
+    </table>
+
+  </div>
 <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
   </body>
 {% endblock content %}
