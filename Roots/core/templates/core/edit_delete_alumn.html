@@ -1,0 +1,66 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+      .alumn-link {
+            color: #900000;
+        }
+
+      .alumn-link:visited {
+          color: #900000;
+        }
+
+      th {
+        color: white;
+      }
+
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+    <h1>Editar/Borrar alumnos</h1>
+    <form class="find-form" method="GET">
+        <input type="text" name="find_area" value="{{finded_value}}" placeholder="Nombre del alumno" style="width:400px; height:40px; text-decoration: none;">
+        <input class='button' type="submit" value="Buscar alumno">
+        <a href="{% url 'alumns_administration' %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+            Volver
+        </a>
+    </form>
+</div>
+<br>
+<div class="flex-container">
+    <table class="table table-bordered border-dark">
+    <thead>
+      <tr class="table-primary" style="background: #900000">
+        <th scope="col">Alumnos</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+
+    {% for alumn in alumns_list %}
+      <tr class="table-secondary">
+          <td>
+            <a href="{% url 'alumn_full_view'  alumn.id  %}" class="alumn-link" style="margin-right: 15px; font-size: 18px;">{{alumn.Nombre}}</a>
+
+            <a href="{% url 'edit_alumn' alumn.id %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; padding: 10px; text-decoration: none; margin-bottom: 10px;">
+                    Editar </a>
+            <a href="{% url 'delete_alumn' alumn.id %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none; margin-bottom: 10px;">
+                    Eliminar </a>
+            <br>
+          </td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+</body>
+
+{% endblock content %}

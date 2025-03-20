@@ -22,14 +22,15 @@
 <body>
 
 <div class="flex-container">
-        <form class="find-form" method="GET">
-            <input type="text" name="find_area" value="{{finded_value}}" style="width:400px; height:40px;">
-            <input class='button' type="submit" value="Buscar profesor">
-            <a href="{% url 'teacher_management' %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
-                Volver
-            </a>
-        </form>
-    </div>
+    <h1>Editar/Borrar usuarios</h1>
+    <form class="find-form" method="GET">
+        <input type="text" name="find_area" value="{{finded_value}}" style="width:400px; height:40px;">
+        <input class='button' type="submit" value="Buscar profesor">
+        <a href="{% url 'teacher_management' %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+            Volver
+        </a>
+    </form>
+</div>
 <br>
 <div class="flex-container">
     <table class="table table-bordered border-dark">
@@ -39,8 +40,6 @@
       </tr>
     </thead>
     <tbody>
-
-
 
     {% for teacher in teachers_list %}
       <tr class="table-secondary">

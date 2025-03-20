@@ -34,27 +34,16 @@ class AlumnList(LoginRequiredMixin, ListView):
         return context
 
 
-# class AlumnList(LoginRequiredMixin, ListView):
-#     model = Alumn
-#     context_object_name = "alumn_list"
-#     template_name = 'core/alumn_list.html'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#     #     context['alumn_list'] = context['alumn_list'].filter(Grupo=self.request.user)
-#         context['count'] = context['alumn_list'].count()
-#
-#         finded_value = self.request.GET.get('find_area') or ''
-#         if finded_value:
-#             context['alumn_list'] = context['alumn_list'].filter(Nombre__icontains = finded_value)
-#             context['finded_value'] = finded_value
-#         return context
-
-
 class AlumnDetail(LoginRequiredMixin, DetailView):
     model = Alumn
     context_object_name = "alumn"
     template_name = "core/alumn.html"
+
+
+class AlumnFullViewDetail(LoginRequiredMixin, DetailView):
+    model = Alumn
+    context_object_name = "alumn_full_view"
+    template_name = "core/alumn_full_view.html"
 
 
 class AddAlumn(LoginRequiredMixin, CreateView):
@@ -65,12 +54,14 @@ class AddAlumn(LoginRequiredMixin, CreateView):
 class EditAlumn(LoginRequiredMixin, UpdateView):
     model = Alumn
     fields = '__all__'
+    template_name = "core/alumn_form.html"
     success_url = reverse_lazy("alumns_administration")
 
 
 class DeleteAlumn(LoginRequiredMixin, DeleteView):
     model = Alumn
     context_object_name = "alumn"
+    template_name = "core/alumn_confirm_delete.html"
     success_url = reverse_lazy("alumns_administration")
 
 
@@ -172,8 +163,13 @@ def register(request):
 
 @login_required
 def edit_delete_user(request):
-    teachers = User.objects.exclude(username="admin")  # Evita mostrar el usuario admin
+    teachers = User.objects.exclude(username="admin")
     return render(request, "core/edit_delete_user.html", {"teachers_list": teachers})
+
+@login_required
+def edit_delete_alumn(request):
+    alumns = Alumn.objects.all()
+    return render(request, "core/edit_delete_alumn.html", {"alumns_list": alumns})
 
 
 

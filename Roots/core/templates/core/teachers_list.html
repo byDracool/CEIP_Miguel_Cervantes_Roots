@@ -21,8 +21,9 @@
     <br>
 
     <div class="flex-container">
+        <h1>Lista de usuarios</h1>
         <form class="find-form" method="GET">
-            <input type="text" name="find_area" value="{{finded_value}}" style="width:400px; height:40px;">
+            <input type="text" name="find_area" value="{{finded_value}}" placeholder="Nombre del usuario" style="width:400px; height:40px; text-decoration: none;">
             <input class='button' type="submit" value="Buscar profesor">
             <a href="{% url 'teacher_management' %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
                 Volver
@@ -37,8 +38,6 @@
       <thead>
         <tr class="table-primary" style="background: #900000">
           <th scope="col" style="color:white;">Username</th>
-  <!--        <th scope="col">Nombre</th>-->
-  <!--        <th scope="col">Fotografia</th>-->
         </tr>
       </thead>
       <tbody>
@@ -48,8 +47,6 @@
 
           <tr class="table-secondary">
             <td><a href="{% url 'user' teacher.id %}" class="user-link">{{ teacher.username }}</a></td>
-    <!--        <td>{{teacher.Nombre}}</td>-->
-    <!--        <td>{{teacher.Fotografia}}</td>-->
           </tr>
         {% endif %}
 

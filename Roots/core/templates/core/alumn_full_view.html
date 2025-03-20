@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="UTF-8">
+    <title>Alumno</title>
+
+    <style>
+        .detail_view {
+        width: 1200px;
+        border: 2px solid #900000;
+        background-color: #FFFFFF;
+        color: #000000;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="detail_view">
+            <h1>Alumno: {{alumn}}</h1>
+
+            <p>Grupo: {{alumno.Grupo}}</p>
+            <p>Foto: {{alumn.Fotografia}}</p>
+            <p>Sexo: {{alumn.Sexo}}</p>
+            <p>Tutor/a: {{alumn.Tutor_a}}</p>
+            <p>Observaciones: {{alumn.Observaciones}}</p>
+            <p>Pruebas externas: {{alumn.PET_KET}}</p>
+            <p>Contacto padre: {{alumn.Telefono_contacto_padre}}</p>
+            <p>Nombre padre: {{alumn.Nombre_padre}}</p>
+            <p>Email padre: {{alumn.Email_padre}}</p>
+            <p>Contacto madre: {{alumn.Telefono_contacto_madre}}</p>
+            <p>Nombre madre: {{alumn.Nombre_madre}}</p>
+            <p>Email madre: {{alumn.Email_madre}}</p>
+            <p>Personas autorizadas recogida: {{alumn.Personas_autorizadas_recogida}}</p>
+            <p>Comedor: {{alumn.Comedor}}</p>
+            <p>Alergias: {{alumn.Alergias}}</p>
+            <p>IBAN: {{alumn.IBAN}}</p>
+            <p>Titular cuenta: {{alumn.Titular_cuenta}}</p>
+            <p>Beca comedor: {{alumn.Beca_comedor}}</p>
+            <p>Pagos pendientes: {{alumn.Pagos_pendientes}}</p>
+            <p>Adhesion Accede: {{alumn.Adhesion_Accede}}</p>
+            <p>Señal Accede: {{alumn.Senal_Accede}}</p>
+
+        <a href="{% url 'alumns_administration' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+                          Volver</a>
+        </div>
+    </div>
+</body>
+{% endblock content %}
