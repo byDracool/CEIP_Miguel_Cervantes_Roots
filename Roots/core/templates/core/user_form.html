@@ -3,19 +3,41 @@
 
   <style>
         .user-form {
-        width: 1200px;
-        border: 2px solid #900000;
-        background-color: #FFFFFF;
-        color: #000000;
-        padding: 10px;
-        font-size: 18px;
-        border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
-        flex-direction: column;
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-        align-items: center;
+            width: 1200px;
+            border: 2px solid #900000;
+            background-color: #FFFFFF;
+            color: #000000;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            flex-direction: column;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+      .user-form select {
+            width: 20%;
+            height: 60px;
+            padding: 5px;
+            font-size: 14px;
+            align-items: center;
+            align-content: center;
+        }
+
+      .user-form span {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+            line-height: 1.5;
+            display: block;
+        }
+
+      .user-form input {
+            color: #777;
         }
 
     </style>
@@ -29,7 +51,7 @@
         <button class="button" type="submit">Guardar cambios</button>
     </form>
     <br>
-    <a href="{% url 'teacher_management' %}" class="button">Cancelar</a>
+    <a href="{% url 'teacher_management' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">Cancelar</a>
 
   </div>
 </body>

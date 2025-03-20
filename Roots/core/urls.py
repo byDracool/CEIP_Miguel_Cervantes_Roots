@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.auth.views import LogoutView, LoginView
-from .views import AlumnList, AlumnDetail, AddAlumn, EditAlumn, DeleteAlumn, TeachersList, UserRegister, EditUser, DeleteUser, UserDetail, AlumnFullViewDetail
+from .views import AlumnList, AlumnDetail, AddAlumn, EditAlumn, DeleteAlumn, TeachersList, UserRegister, EditUser, DeleteUser, UserDetail, AlumnFullViewDetail, AlumnListFullView
 
 urlpatterns = [
     path('', views.home, name = "home"),
@@ -13,6 +13,7 @@ urlpatterns = [
     path('edit_alumn/<int:pk>/', EditAlumn.as_view(), name = "edit_alumn"),
     path('delete_alumn/<int:pk>/', DeleteAlumn.as_view(), name = "delete_alumn"),
     path('edit_delete_alumn/', views.edit_delete_alumn, name = "edit_delete_alumn"),
+    path('alumn_list_full_view/', AlumnListFullView.as_view(), name = "alumn_list_full_view"),
     path('alumn_full_view/<int:pk>/', AlumnFullViewDetail.as_view(), name = "alumn_full_view"),
     path('external_tests/', views.external_tests, name = "external_tests"),
     path('califications/', views.califications, name = "califications"),

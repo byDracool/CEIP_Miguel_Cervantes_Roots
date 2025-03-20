@@ -34,9 +34,15 @@
                 <p>Nombre: {{user.first_name}}</p>
                 <p>Apellidos: {{user.last_name}}</p>
                 <p>Email: {{user.email}}</p>
-                <p>Tipo de usuario: {{user.id_groups}}</p>
+                <p style="display: inline;">Grupo(s) del usuario:</p>
+                {% for group in user.groups.all %}
+                    <span style="display: inline; margin-left: 5px;">{{ group.name }}</span>
+                {% empty %}
+                    <span style="display: inline; margin-left: 5px;">No pertenece a ningún grupo.</span>
+                {% endfor %}
+                <br>
 
-            <a href="{% url 'teacher_management' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+            <a href="{% url 'teacher_management' %}" class="button" style="margin-top: 30px; display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
                               Volver</a>
         </div>
     </div>

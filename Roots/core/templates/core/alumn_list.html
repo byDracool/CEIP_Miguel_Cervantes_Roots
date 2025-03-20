@@ -60,66 +60,66 @@
 
     <br>
 
-    <table class="table table-bordered border-dark">
-<!--    <table class="table table-bordered border-secondary">-->
-    <thead>
-      <tr class="table-primary" style="background: #900000">
-        <th scope="col">Grupo</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Fotografia</th>
-        <th scope="col">Sexo</th>
-        <th scope="col">Tutor/a</th>
-        <th scope="col">Observaciones</th>
-        <th scope="col">PET/KET</th>
-        <th scope="col">Telefono contacto padre</th>
-        <th scope="col">Nombre padre</th>
-        <th scope="col">E-mail padre</th>
-        <th scope="col">Telefono contacto madre</th>
-        <th scope="col">Nombre madre</th>
-        <th scope="col">E-mail madre</th>
-        <th scope="col">Personas autorizadas recogida</th>
-        <th scope="col">Comedor</th>
-        <th scope="col">Alergias</th>
-        <th scope="col">IBAN</th>
-        <th scope="col">Titular cuenta</th>
-        <th scope="col">Beca comedor</th>
-        <th scope="col">Pagos pendientes meses</th>
-        <th scope="col">Adhesion Accede</th>
-        <th scope="col">Señal Accede</th>
-      </tr>
-    </thead>
-    <tbody>
+    <div class="flex-container">
+      <table class="table table-bordered border-dark">
+        <thead>
+          <tr class="table-primary" style="background: #900000">
+            <th scope="col">Grupo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fotografia</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Tutor/a</th>
+            <th scope="col">Observaciones</th>
+            <th scope="col">PET/KET</th>
+    <!--        <th scope="col">Telefono contacto padre</th>-->
+    <!--        <th scope="col">Nombre padre</th>-->
+    <!--        <th scope="col">E-mail padre</th>-->
+    <!--        <th scope="col">Telefono contacto madre</th>-->
+    <!--        <th scope="col">Nombre madre</th>-->
+    <!--        <th scope="col">E-mail madre</th>-->
+            <th scope="col">Personas autorizadas recogida</th>
+            <th scope="col">Comedor</th>
+            <th scope="col">Alergias</th>
+    <!--        <th scope="col">IBAN</th>-->
+    <!--        <th scope="col">Titular cuenta</th>-->
+    <!--        <th scope="col">Beca comedor</th>-->
+    <!--        <th scope="col">Pagos pendientes meses</th>-->
+    <!--        <th scope="col">Adhesion Accede</th>-->
+    <!--        <th scope="col">Señal Accede</th>-->
+          </tr>
+        </thead>
+        <tbody>
 
-    {% for alumn in alumn_list %}
-      <tr class="table-secondary">
-        <td>{{alumn.Grupo}}</td>
-        <td><a href="{% url 'alumn'  alumn.id  %}" id="alumn-link">{{alumn.Nombre}}</a></td>
-        <td>{{alumn.Fotografia}}</td>
-        <td>{{alumn.Sexo}}</td>
-        <td>{{alumn.Tutor_a}}</td>
-        <td>{{alumn.Observaciones}}</td>
-        <td>{{alumn.PET_KET}}</td>
-        <td>{{alumn.Telefono_contacto_padre}}</td>
-        <td>{{alumn.Nombre_padre}}</td>
-        <td>{{alumn.Email_padre}}</td>
-        <td>{{alumn.Telefono_contacto_madre}}</td>
-        <td>{{alumn.Nombre_madre}}</td>
-        <td>{{alumn.Email_madre}}</td>
-        <td>{{alumn.Personas_autorizadas_recogida}}</td>
-        <td>{{alumn.Comedor}}</td>
-        <td>{{alumn.Alergias}}</td>
-        <td>{{alumn.IBAN}}</td>
-        <td>{{alumn.Titular_cuenta}}</td>
-        <td>{{alumn.Beca_comedor}}</td>
-        <td>{{alumn.Pagos_pendientes}}</td>
-        <td>{{alumn.Adhesion_Accede}}</td>
-        <td>{{alumn.Senal_Accede}}</td>
-      </tr>
+      {% for alumn in alumn_list %}
+        <tr class="table-secondary">
+          <td>{{alumn.Grupo}}</td>
+          <td><a href="{% url 'alumn'  alumn.id  %}" id="alumn-link">{{alumn.Nombre}}</a></td>
+          <td>{{alumn.Fotografia}}</td>
+          <td>{{alumn.Sexo}}</td>
+          <td>{{alumn.Tutor_a}}</td>
+          <td>{{alumn.Observaciones}}</td>
+          <td>{{alumn.PET_KET}}</td>
+  <!--        <td>{{alumn.Telefono_contacto_padre}}</td>-->
+  <!--        <td>{{alumn.Nombre_padre}}</td>-->
+  <!--        <td>{{alumn.Email_padre}}</td>-->
+  <!--        <td>{{alumn.Telefono_contacto_madre}}</td>-->
+  <!--        <td>{{alumn.Nombre_madre}}</td>-->
+  <!--        <td>{{alumn.Email_madre}}</td>-->
+          <td>{{alumn.Personas_autorizadas_recogida}}</td>
+          <td>{{alumn.Comedor}}</td>
+          <td>{{alumn.Alergias}}</td>
+  <!--        <td>{{alumn.IBAN}}</td>-->
+  <!--        <td>{{alumn.Titular_cuenta}}</td>-->
+  <!--        <td>{{alumn.Beca_comedor}}</td>-->
+  <!--        <td>{{alumn.Pagos_pendientes}}</td>-->
+  <!--        <td>{{alumn.Adhesion_Accede}}</td>-->
+  <!--        <td>{{alumn.Senal_Accede}}</td>-->
+        </tr>
 
-    {% endfor %}
+      {% endfor %}
 
-    </tbody>
-  </table>
-<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+      </tbody>
+    </table>
+    </div>
   </body>
 {% endblock content %}

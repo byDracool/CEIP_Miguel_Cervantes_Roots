@@ -34,6 +34,29 @@ class AlumnList(LoginRequiredMixin, ListView):
         return context
 
 
+class AlumnListFullView(LoginRequiredMixin, ListView):
+    model = Alumn
+    context_object_name = "alumn_list_full_view"
+    template_name = 'core/alumn_list_full_view.html'
+
+    def get_queryset(self):
+        """Filter the list of students by name if a value has been entered in the search bar."""
+        queryset = super().get_queryset()
+        searched_value = self.request.GET.get('find_area', '').strip()
+
+        if searched_value:
+            queryset = queryset.filter(Nombre__icontains=searched_value)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        """Add the total number of results and the searched value to the context"""
+        context = super().get_context_data(**kwargs)
+        context['count'] = context['alumn_list_full_view'].count()
+        context['searched_value'] = self.request.GET.get('find_area', '').strip()
+        return context
+
+
 class AlumnDetail(LoginRequiredMixin, DetailView):
     model = Alumn
     context_object_name = "alumn"
@@ -109,7 +132,7 @@ class UserRegister(LoginRequiredMixin, FormView):
 
 class EditUser(LoginRequiredMixin, UpdateView):
     model = User
-    fields = '__all__'
+    fields = ["username", "password", "first_name", "last_name", "email", "groups"]
     template_name = "core/user_form.html"
     success_url = reverse_lazy("teacher_management")
 
