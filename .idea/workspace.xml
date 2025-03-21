@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6c8490b-a44f-4a52-b229-366ffc193f79" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Roots/core/migrations/0005_alumn_calificaciones.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Roots/core/templates/core/view_califications.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/accede.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/accede.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/economy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/economy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/external_tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/external_tests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/parents_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/parents_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/static/core/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/static/core/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn_full_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn_full_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn_list_full_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn_list_full_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/califications.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/califications.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

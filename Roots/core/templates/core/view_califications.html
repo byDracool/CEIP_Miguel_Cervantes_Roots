@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Calificaciones</title>
+</head>
+<body>
+
+ <div class="flex-container">
+    <h1>Calificaciones de {{ alumn.Nombre }}</h1>
+    <div style="text-align: center; margin-bottom:30px">
+        {% for materia, nota in alumn.Calificaciones.items %}
+            <div>{{ materia }}: <span style="color: #900000;">{{ nota }}</span></div>
+        {% empty %}
+            <div>Sin calificaciones registradas</div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'califications' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">Volver</a>
+</div>
+
+</body>
+
+{% endblock content %}

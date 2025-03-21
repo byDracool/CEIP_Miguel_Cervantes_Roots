@@ -51,6 +51,7 @@ class Alumn(models.Model):
         ("None", "None"),
     ]
     PET_KET = models.CharField(choices=external_tests_choices, max_length=4, blank=True, default="")
+    Calificaciones = models.JSONField(default=dict, blank=True, null=True)
     Telefono_contacto_padre = models.PositiveIntegerField(blank=True, null=True)
     Nombre_padre = models.CharField(max_length=30, blank=True, null=True)
     Email_padre = models.EmailField(blank=True, null=True)
@@ -74,7 +75,6 @@ class Alumn(models.Model):
     ]
     Adhesion_Accede = models.CharField(choices=accede_choices, max_length=2, blank=False)
     Senal_Accede = models.CharField(choices=accede_choices, max_length=2, blank=False)
-
 
     def __str__(self):
         return self.Nombre

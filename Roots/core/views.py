@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django import forms
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -164,17 +165,27 @@ class Accede(AlumnList):
     template_name = "core/accede.html"
 
 
+class Califications(AlumnList):
+    model = Alumn
+    template_name = "core/califications.html"
+    context_object_name = ""
+
+
+class ViewCalifications(LoginRequiredMixin, DetailView):
+    model = Alumn
+    template_name = "core/view_califications.html"
+    context_object_name = ""
+
+
+class EditCalifications(EditAlumn):
+    fields = ["Grupo", "Nombre", "Calificaciones"]
+    template_name = "core/alumn_form.html"
+    success_url = reverse_lazy("califications")
+
+
 @login_required
 def home(request):
     return render(request, "core/home.html")
-
-@login_required
-def califications(request):
-    return render(request, "core/califications.html")
-
-# @login_required
-# def accede(request):
-#     return render(request, "core/accede.html")
 
 @login_required
 def incidences(request):

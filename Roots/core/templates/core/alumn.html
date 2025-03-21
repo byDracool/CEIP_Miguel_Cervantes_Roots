@@ -22,6 +22,14 @@
         align-items: center;
         }
 
+        #alumn-link {
+            color: #900000;
+        }
+
+        #alumn-link:visited {
+          color: #900000;
+        }
+
     </style>
 </head>
 <body>
@@ -36,6 +44,7 @@
             <p>Tutor/a: {{alumn.Tutor_a}}</p>
             <p>Observaciones: {{alumn.Observaciones}}</p>
             <p>Pruebas externas: {{alumn.PET_KET}}</p>
+            <p>Calificaciones: <a href="{% url 'view_califications' alumn.id %}" id="alumn-link" style="text-decoration: underline color:#900000;">Ver</a></p>
             <p>Contacto padre: {{alumn.Telefono_contacto_padre}}</p>
             <p>Nombre padre: {{alumn.Nombre_padre}}</p>
             <p>Email padre: {{alumn.Email_padre}}</p>

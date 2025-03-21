@@ -1,12 +1,60 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block content %}
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+
+<style>
+    .alumn-link {
+            color: #900000;
+        }
+
+    .alumn-link:visited {
+      color: #900000;
+    }
+
+</style>
+
 <body>
-<h1>Calificaciones</h1>
+<br>
+
+    <div class="flex-container">
+      <h1>Alumnado CEIP Miguel de Cervantes</h1>
+        <form class="find-form" method="GET">
+            <input type="text" name="find_area" value="{{finded_value}}" placeholder="Nombre del alumno" style="width:400px; height:40px; text-decoration: none;">
+            <input class='button' type="submit" value="Buscar alumno">
+            <a href="{% url 'home' %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+                Volver
+            </a>
+        </form>
+      <p>Total de resultados: {{ count }}</p>
+    </div>
+
+    <br>
+
+    <div class="flex-container">
+      <table class="table table-bordered border-dark">
+        <thead>
+          <tr class="table-primary" style="background: #900000; color:white;">
+            <th scope="col">Grupo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Ver</th>
+            <th scope="col">Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      {% for alumn in alumn_list %}
+        <tr class="table-secondary">
+          <td>{{alumn.Grupo}}</td>
+          <td>{{alumn.Nombre}}</td>
+          <td><a href="{% url 'view_califications' alumn.id %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; padding: 10px; text-decoration: none; margin-bottom: 10px;">Ver</a></td>
+          <td><a href="{% url 'edit_califications' alumn.id %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; padding: 10px; text-decoration: none; margin-bottom: 10px;">Editar </a>
+        </tr>
+
+      {% endfor %}
+
+      </tbody>
+    </table>
+    </div>
 </body>
 
 {% endblock content %}
