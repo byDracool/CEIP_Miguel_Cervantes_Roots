@@ -144,29 +144,37 @@ class DeleteUser(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy("teacher_management")
 
 
+class ExternalTests(AlumnList):
+    fields = ["Grupo","Nombre","PET_KET"]
+    template_name = "core/external_tests.html"
+
+
+class ParentsContact(AlumnList):
+    fields = ["Grupo","Nombre","Telefono_contacto_padre","Nombre_padre","Email_padre","Telefono_contacto_madre","Nombre_madre", "Email_madre", "Personas_autorizadas_recogida"]
+    template_name = "core/parents_contact.html"
+
+
+class Economy(AlumnList):
+    fields = ["Grupo","Nombre","Comedor","IBAN","Titular_cuenta","Beca_comedor","Pagos_pendientes"]
+    template_name = "core/economy.html"
+
+
+class Accede(AlumnList):
+    fields = ["Grupo", "Nombre", "Adhesion_Accede", "Senal_Accede"]
+    template_name = "core/accede.html"
+
+
 @login_required
 def home(request):
     return render(request, "core/home.html")
 
 @login_required
-def external_tests(request):
-    return render(request, "core/external_tests.html")
-
-@login_required
 def califications(request):
     return render(request, "core/califications.html")
 
-@login_required
-def economy(request):
-    return render(request, "core/economy.html")
-
-@login_required
-def parents_contact(request):
-    return render(request, "core/parents_contact.html")
-
-@login_required
-def accede(request):
-    return render(request, "core/accede.html")
+# @login_required
+# def accede(request):
+#     return render(request, "core/accede.html")
 
 @login_required
 def incidences(request):

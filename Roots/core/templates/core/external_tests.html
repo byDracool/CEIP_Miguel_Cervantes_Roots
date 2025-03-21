@@ -6,10 +6,59 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!-- Styles -->
-    <link href="css/main.css" rel="stylesheet">
+    <style>
+        th {
+            color: white;
+          }
+
+        #alumn-link {
+                color: #900000;
+            }
+
+          #alumn-link:visited {
+              color: #900000;
+            }
+
+    </style>
 </head>
 <body>
-<h1>External Tests</h1>
+<div class="flex-container">
+      <h1>Pruebas externas</h1>
+        <form class="find-form" method="GET">
+            <input type="text" name="find_area" value="{{finded_value}}" placeholder="Nombre del alumno" style="width:400px; height:40px; text-decoration: none;">
+            <input class='button' type="submit" value="Buscar alumno">
+            <a href="{% url 'home' %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
+                Volver
+            </a>
+        </form>
+      <p>Total de resultados: {{ count }}</p>
+    <br>
+    </div>
+
+<div class="flex-container">
+      <table class="table table-bordered border-dark">
+        <thead>
+          <tr class="table-primary" style="background: #900000">
+            <th scope="col">Grupo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">PET/KET</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      {% for alumn in alumn_list %}
+        <tr class="table-secondary">
+          <td>{{alumn.Grupo}}</td>
+          <td><a href="{% url 'alumn'  alumn.id  %}" id="alumn-link">{{alumn.Nombre}}</a></td>
+          <td>{{alumn.PET_KET}}</td>
+        </tr>
+
+      {% endfor %}
+
+      </tbody>
+    </table>
+    </div>
+
 </body>
 
 {% endblock content %}

@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.auth.views import LogoutView, LoginView
-from .views import AlumnList, AlumnDetail, AddAlumn, EditAlumn, DeleteAlumn, TeachersList, UserRegister, EditUser, DeleteUser, UserDetail, AlumnFullViewDetail, AlumnListFullView
+from .views import AlumnList, AlumnDetail, AddAlumn, EditAlumn, DeleteAlumn, TeachersList, UserRegister, EditUser, DeleteUser, UserDetail, AlumnFullViewDetail, AlumnListFullView, ExternalTests, ParentsContact, Economy, Accede
 
 urlpatterns = [
     path('', views.home, name = "home"),
@@ -15,11 +15,13 @@ urlpatterns = [
     path('edit_delete_alumn/', views.edit_delete_alumn, name = "edit_delete_alumn"),
     path('alumn_list_full_view/', AlumnListFullView.as_view(), name = "alumn_list_full_view"),
     path('alumn_full_view/<int:pk>/', AlumnFullViewDetail.as_view(), name = "alumn_full_view"),
-    path('external_tests/', views.external_tests, name = "external_tests"),
+    path('external_tests/', ExternalTests.as_view(), name = "external_tests"),
     path('califications/', views.califications, name = "califications"),
-    path('economy/', views.economy, name = "economy"),
-    path('parents_contact/', views.parents_contact, name = "parents_contact"),
-    path('accede/', views.accede, name = "accede"),
+    # path('economy/', views.economy, name = "economy"),
+    path('parents_contact/', ParentsContact.as_view(), name = "parents_contact"),
+    path('economy/', Economy.as_view(), name = "economy"),
+    path('accede/', Accede.as_view(), name = "accede"),
+    # path('accede/', views.accede, name = "accede"),
     path('incidences/', views.incidences, name = "incidences"),
     path('alumns_administration/', views.alumns_administration, name = "alumns_administration"),
     path('teacher_management/', views.teacher_management, name = "teacher_management"),

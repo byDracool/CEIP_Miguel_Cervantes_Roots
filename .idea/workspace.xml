@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b6c8490b-a44f-4a52-b229-366ffc193f79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn_full_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn_full_view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumns_administration.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumns_administration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/teacher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/user_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/user_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/accede.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/accede.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/economy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/economy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/external_tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/external_tests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/parents_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/parents_contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/views.py" afterDir="false" />
     </list>
