@@ -23,6 +23,8 @@ urlpatterns = [
     path('', include('core.urls')),
     path('datawizard/', include('data_wizard.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    #Contact paths
+    path('contact/', include('contact.urls')),
     #Admin's paths
     path('admin/', admin.site.urls),
 ]

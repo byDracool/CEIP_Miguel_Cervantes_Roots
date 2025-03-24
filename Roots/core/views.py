@@ -182,14 +182,19 @@ class EditCalifications(EditAlumn):
     template_name = "core/alumn_form.html"
     success_url = reverse_lazy("califications")
 
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+
+        if "Grupo" in form.fields:
+            form.fields["Grupo"].disabled = True
+        if "Nombre" in form.fields:
+            form.fields["Nombre"].disabled = True
+        return form
+
 
 @login_required
 def home(request):
     return render(request, "core/home.html")
-
-@login_required
-def incidences(request):
-    return render(request, "core/incidences.html")
 
 @login_required
 def alumns_administration(request):
