@@ -38,6 +38,7 @@
       <thead>
         <tr class="table-primary" style="background: #900000">
           <th scope="col" style="color:white;">Username</th>
+          <th scope="col" style="color:white;">Grupo</th>
         </tr>
       </thead>
       <tbody>
@@ -47,6 +48,7 @@
 
           <tr class="table-secondary">
             <td><a href="{% url 'user' teacher.id %}" class="user-link">{{ teacher.name }}</a></td>
+            <td>{{ teacher.alumns_group }}</td>
           </tr>
         {% endif %}
 

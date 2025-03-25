@@ -6,21 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b6c8490b-a44f-4a52-b229-366ffc193f79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/Roots/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/Roots/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/migrations/0002_alter_alumn_pagos_pendientes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/migrations/0003_alter_alumn_options_alter_alumn_adhesion_accede_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/migrations/0004_alumn_fotografia.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/migrations/0005_alumn_calificaciones.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/edit_delete_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/edit_delete_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/teacher.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/teachers_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/teachers_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/registration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
