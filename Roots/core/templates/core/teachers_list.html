@@ -43,10 +43,10 @@
       <tbody>
 
       {% for teacher in teachers_list %}
-        {% if teacher.username != "admin" %}
+        {% if teacher.name != "admin" %}
 
           <tr class="table-secondary">
-            <td><a href="{% url 'user' teacher.id %}" class="user-link">{{ teacher.username }}</a></td>
+            <td><a href="{% url 'user' teacher.id %}" class="user-link">{{ teacher.name }}</a></td>
           </tr>
         {% endif %}
 

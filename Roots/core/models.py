@@ -1,9 +1,14 @@
+import uuid
+from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
+from django.core.mail import send_mail
+from django.utils.translation import gettext_lazy
+from .managers import UserManager
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 
 
-class Alumn(models.Model):
-    group_choices = [
+GROUP_CHOICES = [
         ("1AI", "1_A_infantil"),
         ("1BI", "1_B_infantil"),
         ("1CI", "1_C_infantil"),
@@ -34,7 +39,70 @@ class Alumn(models.Model):
         ("6AP", "6_A_primaria"),
         ("6BP", "6_B_primaria"),
     ]
-    Grupo = models.CharField(choices=group_choices, max_length=3, blank=False)
+
+
+class User(AbstractBaseUser, PermissionsMixin):
+    """Data model for custom user in system"""
+
+    name = models.CharField(
+        gettext_lazy("first_name"), max_length=30, blank=False, null=False
+    )
+    lastname = models.CharField(
+        gettext_lazy("last_name"), max_length=30, blank=False, null=False
+    )
+    alumns_group = models.CharField(
+        gettext_lazy("alumns_group"), choices=GROUP_CHOICES, max_length=10, blank=True, null=True
+    )
+    email = models.EmailField(gettext_lazy("email_address"), unique=True)
+    date_joined = models.DateTimeField(gettext_lazy("date_joined"), auto_now_add=True)
+    uuid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)
+    is_staff = models.BooleanField(
+        gettext_lazy("staff status"),
+        default=False,
+        help_text=gettext_lazy(
+            "Designates wheter the user can log into this admin site."
+        ),
+    )
+    is_active = models.BooleanField(gettext_lazy("active"), default=True)
+    objects = UserManager()
+
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["name", "lastname"]
+
+    class Meta:
+        """Meta definitions for model"""
+
+        verbose_name = gettext_lazy("user")
+        verbose_name_plural = gettext_lazy("users")
+
+    @property
+    def full_name(self):
+        """
+        Returns the full name.
+        """
+        full_name = f"{self.name} {self.lastname}"
+        return full_name.strip()
+
+    def get_short_name(self):
+        """
+        Returns a short name for the user.
+        """
+        return self.name
+
+    def email_user(self, subject, message, from_email=None, **kwargs):
+        """
+        Send an email to this user.
+        """
+        send_mail(subject, message, from_email, [self.email], **kwargs)
+
+    def __str__(self):
+        return self.full_name
+
+
+
+class Alumn(models.Model):
+
+    Grupo = models.CharField(choices=GROUP_CHOICES, max_length=3, blank=False)
     Nombre = models.CharField(max_length=200, blank=False, null=False)
     Fotografia = models.URLField(max_length=200, blank=True, null = True)
     gender_choices = [
@@ -43,7 +111,7 @@ class Alumn(models.Model):
         ("NA", "Sin especificar"),
     ]
     Sexo = models.CharField(choices=gender_choices, max_length=2, blank=False)
-    Tutor_a = models.ForeignKey(User, null = False, blank=False, on_delete=models.DO_NOTHING)
+    Tutor_a = models.ForeignKey(settings.AUTH_USER_MODEL, null = False, blank=False, on_delete=models.DO_NOTHING)
     Observaciones = models.TextField(max_length=300, blank=True, null=True)
     external_tests_choices = [
         ("PET", "PET"),

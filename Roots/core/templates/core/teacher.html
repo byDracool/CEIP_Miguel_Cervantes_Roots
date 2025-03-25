@@ -30,9 +30,10 @@
         <div class="detail_view">
             <h1>Usuario: {{user}}</h1>
 
-                <p>Username: {{user.username}}</p>
-                <p>Nombre: {{user.first_name}}</p>
-                <p>Apellidos: {{user.last_name}}</p>
+
+                <p>Nombre: {{user.name}}</p>
+                <p>Apellidos: {{user.lastname}}</p>
+                <p>Grupo alumnos: {{user.alumns_group}}</p>
                 <p>Email: {{user.email}}</p>
                 <p style="display: inline;">Grupo(s) del usuario:</p>
                 {% for group in user.groups.all %}

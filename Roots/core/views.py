@@ -1,15 +1,15 @@
-from django.shortcuts import render
-from django import forms
+from django.shortcuts import render, redirect
+from .register_form import RegisterForm
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
-from .models import Alumn
+from .models import Alumn, User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
 
 class AlumnList(LoginRequiredMixin, ListView):
@@ -120,7 +120,7 @@ class UserDetail(LoginRequiredMixin, DetailView):
 
 class UserRegister(LoginRequiredMixin, FormView):
     template_name = 'registration/register.html'
-    form_class = UserCreationForm
+    form_class = RegisterForm
     redirect_authenticated_user = False
     success_url = reverse_lazy('teacher_management')
 
@@ -133,7 +133,7 @@ class UserRegister(LoginRequiredMixin, FormView):
 
 class EditUser(LoginRequiredMixin, UpdateView):
     model = User
-    fields = ["username", "password", "first_name", "last_name", "email", "groups"]
+    fields = ["name", "lastname", "alumns_group", "email", "password"]
     template_name = "core/user_form.html"
     success_url = reverse_lazy("teacher_management")
 
@@ -204,13 +204,25 @@ def alumns_administration(request):
 def teacher_management(request):
     return render(request, "core/teacher_management.html")
 
-@login_required
+# @login_required
+# def register(request):
+#     return render(request, "registration/register.html")
+
 def register(request):
-    return render(request, "registration/register.html")
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            # login(request, user)  # Autenticación opcional después del registro
+            return redirect("teacher_management")
+    else:
+        form = RegisterForm()
+
+    return render(request, "registration/register.html", {"form": form})
 
 @login_required
 def edit_delete_user(request):
-    teachers = User.objects.exclude(username="admin")
+    teachers = User.objects.exclude(name="admin").values("id", "name", "lastname", "alumns_group", "email")
     return render(request, "core/edit_delete_user.html", {"teachers_list": teachers})
 
 @login_required

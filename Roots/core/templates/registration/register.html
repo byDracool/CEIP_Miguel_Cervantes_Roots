@@ -32,14 +32,25 @@
 
         <form class="user-form" method="POST" action="">
             {% csrf_token %}
-            <label>{{form.username.label}}</label>
-                {{form.username}}
+            <div class="flex-container" style="margin-top:20px; margin-bottom:20px;">
+                <label>{{form.name.label}}</label>
+                <div style="margin-bottom: 15px;">{{form.name}}</div>
 
-            <label>{{form.password1.label}}</label>
-                {{form.password1}}
+                <label>{{form.last_name.label}}</label>
+                <div style="margin-bottom: 15px;">{{form.last_name}}</div>
 
-            <label>{{form.password2.label}}</label>
-                {{form.password2}}
+                <label>{{form.alumns_group.label}}</label>
+                <div style="margin-bottom: 15px;">{{form.alumns_group}}</div>
+
+                <label>{{form.email.label}}</label>
+                <div style="margin-bottom: 15px;">{{form.email}}</div>
+
+                <label>{{form.password1.label}}</label>
+                <div style="margin-bottom: 15px;">{{form.password1}}</div>
+
+                <label>{{form.password2.label}}</label>
+                <div style="margin-bottom: 15px;">{{form.password2}}</div>
+            </div>
             <input style= "display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#FFFFFF; padding: 10px; text-decoration: underline; border: 2px solid #900000;" class='boton' type="submit" value="Crear usuario">
             <a href="{% url 'teacher_management' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
                 Volver

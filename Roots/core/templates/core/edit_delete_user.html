@@ -36,20 +36,26 @@
     <table class="table table-bordered border-dark">
     <thead>
       <tr class="table-primary" style="background: #900000">
-        <th scope="col">Usuarios</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Grupo</th>
+        <th scope="col">Correo Electrónico</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
 
     {% for teacher in teachers_list %}
       <tr class="table-secondary">
-          <td>
-            <a href="{% url 'user' teacher.id %}" class="user-link" style="margin-right: 15px; font-size: 18px;">{{ teacher.username }}</a>
-
+        <td>{{ teacher.name}}</td>
+        <td>{{ teacher.lastname }}</td>
+        <td>{{ teacher.alumns_group }}</td>
+        <td>{{ teacher.email }}</td>
+        <td>
             <a href="{% url 'edit_user' teacher.id %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; padding: 10px; text-decoration: none; margin-bottom: 10px;">
-                    Editar </a>
+                Editar </a>
             <a href="{% url 'delete_user' teacher.id %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none; margin-bottom: 10px;">
-                    Eliminar </a>
+                Eliminar </a>
             <br>
           </td>
       </tr>
