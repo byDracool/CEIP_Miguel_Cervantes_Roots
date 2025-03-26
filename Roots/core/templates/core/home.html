@@ -25,10 +25,12 @@
             <a href="{% url 'external_tests' %}"><button type="submit" class="button btn-outline-danger text-black">Pruebas externas</button></a>
             <a href="{% url 'califications' %}"><button type="submit" class="button btn-outline-danger text-black">Calificaciones</button></a>
             <a href="{% url 'parents_contact' %}"><button type="submit" class="button btn-outline-danger text-black">Contacto alumnos</button></a>
-            <a href="{% url 'economy' %}"><button type="submit" style="background-color: #AAAAAA" class="button btn-outline-danger text-black">Gestión económica</button></a>
-            <a href="{% url 'accede' %}"><button type="submit" style="background-color: #AAAAAA" class="button btn-outline-danger text-black">Accede</button></a>
-            <a href="{% url 'alumns_administration' %}"><button type="submit" style="background-color:#AAAAAA" class="button btn-outline-danger text-black">Administracion de alumnos</button></a>
-            <a href="{% url 'teacher_management' %}"><button type="submit" style="background-color:#AAAAAA" class="button btn-outline-danger text-black">Gestión del profesorado</button></a>
+            {% if request.user.is_staff %}
+                <a href="{% url 'economy' %}"><button type="submit" style="background-color: #AAAAAA" class="button btn-outline-danger text-black">Gestión económica</button></a>
+                <a href="{% url 'accede' %}"><button type="submit" style="background-color: #AAAAAA" class="button btn-outline-danger text-black">Accede</button></a>
+                <a href="{% url 'alumns_administration' %}"><button type="submit" style="background-color:#AAAAAA" class="button btn-outline-danger text-black">Administracion de alumnos</button></a>
+                <a href="{% url 'teacher_management' %}"><button type="submit" style="background-color:#AAAAAA" class="button btn-outline-danger text-black">Gestión del profesorado</button></a>
+            {% endif %}
         </div>
     </body>
 {% endblock content %}

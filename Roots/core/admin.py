@@ -6,3 +6,4 @@ import data_wizard
 admin.site.register(Alumn)
 data_wizard.register(Alumn)
 admin.site.register(User)
+data_wizard.register(User)

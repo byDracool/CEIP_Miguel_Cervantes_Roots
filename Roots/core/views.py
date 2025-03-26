@@ -30,6 +30,8 @@ class AlumnList(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         """Add the total number of results and the searched value to the context"""
         context = super().get_context_data(**kwargs)
+        if self.request.user.alumns_group:
+            context['alumn_list'] = context['alumn_list'].filter(Grupo=self.request.user.alumns_group)
         context['count'] = context['alumn_list'].count()
         context['searched_value'] = self.request.GET.get('find_area', '').strip()
         return context
@@ -203,10 +205,6 @@ def alumns_administration(request):
 @login_required
 def teacher_management(request):
     return render(request, "core/teacher_management.html")
-
-# @login_required
-# def register(request):
-#     return render(request, "registration/register.html")
 
 def register(request):
     if request.method == "POST":

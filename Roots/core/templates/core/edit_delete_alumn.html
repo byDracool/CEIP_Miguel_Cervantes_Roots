@@ -46,7 +46,7 @@
     {% for alumn in alumns_list %}
       <tr class="table-secondary">
           <td>
-            <a href="{% url 'alumn_full_view'  alumn.id  %}" class="alumn-link" style="margin-right: 15px; font-size: 18px;">{{alumn.Nombre}}</a>
+            <a href="{% url 'alumn_full_view'  alumn.id  %}" class="alumn-link" style="margin-right: 15px; font-size: 18px;">{{alumn.Nombre}} ({{alumn.Grupo}})</a>
 
             <a href="{% url 'edit_alumn' alumn.id %}" class="button" style="display: inline-block; text-align: center; width: auto; font-size: 14px; padding: 10px; text-decoration: none; margin-bottom: 10px;">
                     Editar </a>

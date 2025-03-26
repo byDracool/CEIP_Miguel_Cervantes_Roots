@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b6c8490b-a44f-4a52-b229-366ffc193f79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/teachers_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/teachers_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/Roots/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/Roots/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/static/core/usuarios/usuarios.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/static/core/usuarios/usuarios.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/alumn_full_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/alumn_full_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/edit_delete_alumn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/edit_delete_alumn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/templates/core/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/templates/core/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roots/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/core/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Roots/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Roots/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

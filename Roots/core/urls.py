@@ -32,3 +32,4 @@ urlpatterns = [
     path('delete_user/<int:pk>/', DeleteUser.as_view(), name = "delete_user"),
     path('edit_delete_user/', views.edit_delete_user, name = "edit_delete_user"),
 ]
+

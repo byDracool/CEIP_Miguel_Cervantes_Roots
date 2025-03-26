@@ -37,9 +37,8 @@
     <div class="flex-container">
         <div class="detail_view">
             <h1>Alumno: {{alumn}}</h1>
-
             <p>Grupo: {{alumn.Grupo}}</p>
-            <p>Foto: {{alumn.Fotografia}}</p>
+            <img src="{% static 'core/images/foto_alumno.png' %}" alt="Fotografía de {{ alumn }}" width="200">
             <p>Sexo: {{alumn.Sexo}}</p>
             <p>Tutor/a: {{alumn.Tutor_a}}</p>
             <p>Observaciones: {{alumn.Observaciones}}</p>
@@ -54,15 +53,8 @@
             <p>Personas autorizadas recogida: {{alumn.Personas_autorizadas_recogida}}</p>
             <p>Comedor: {{alumn.Comedor}}</p>
             <p>Alergias: {{alumn.Alergias}}</p>
-            <p>IBAN: {{alumn.IBAN}}</p>
-            <p>Titular cuenta: {{alumn.Titular_cuenta}}</p>
-            <p>Beca comedor: {{alumn.Beca_comedor}}</p>
-            <p>Pagos pendientes: {{alumn.Pagos_pendientes}}</p>
-            <p>Adhesion Accede: {{alumn.Adhesion_Accede}}</p>
-            <p>Señal Accede: {{alumn.Senal_Accede}}</p>
 
-        <a href="{% url 'alumn_list' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">
-                          Volver</a>
+        <a href="{% url 'alumn_list' %}" class="button" style="display: inline-block; text-align: center; width: 400px; font-size: 18px; background:#900000; color: #FFFFFF; padding: 10px; text-decoration: none;">Volver</a>
         </div>
     </div>
 </body>

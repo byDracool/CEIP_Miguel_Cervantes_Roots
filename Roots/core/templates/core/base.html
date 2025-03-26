@@ -85,10 +85,12 @@
                 <li><a href="https://site.educa.madrid.org/cp.cervantes.trescantos/" target="_blank" >
                     <img alt="Logo Cervantes" class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'core/images/Logo_Miguel_Cervantes.jpg' %}"></a>
                 </li>
-                <li style="float:right"><a href="{% url 'teacher_management' %}" class="{% if request.path == '/teacher_management/' %}current-page{% endif %}">Gestión del profesorado</a></li>
-                <li style="float:right"><a href="{% url 'alumns_administration' %}" class="{% if request.path == '/alumns_administration/' %}current-page{% endif %}">Administración de alumnos</a></li>
-                <li style="float:right"><a href="{% url 'accede' %}" class="{% if request.path == '/accede/' %}current-page{% endif %}">Accede</a></li>
-                <li style="float:right"><a href="{% url 'economy' %}" class="{% if request.path == '/economy/' %}current-page{% endif %}">Gestión económica</a></li>
+                {% if request.user.is_staff %}
+                    <li style="float:right"><a href="{% url 'teacher_management' %}" class="{% if request.path == '/teacher_management/' %}current-page{% endif %}">Gestión del profesorado</a></li>
+                    <li style="float:right"><a href="{% url 'alumns_administration' %}" class="{% if request.path == '/alumns_administration/' %}current-page{% endif %}">Administración de alumnos</a></li>
+                    <li style="float:right"><a href="{% url 'accede' %}" class="{% if request.path == '/accede/' %}current-page{% endif %}">Accede</a></li>
+                    <li style="float:right"><a href="{% url 'economy' %}" class="{% if request.path == '/economy/' %}current-page{% endif %}">Gestión económica</a></li>
+                {% endif %}
                 <li style="float:right"><a href="{% url 'parents_contact' %}" class="{% if request.path == '/parents_contact/' %}current-page{% endif %}">Contacto Alumnos</a></li>
                 <li style="float:right"><a href="{% url 'califications' %}" class="{% if request.path == '/califications/' %}current-page{% endif %}">Calificaciones</a></li>
                 <li style="float:right"><a href="{% url 'external_tests' %}" class="{% if request.path == '/external_tests/' %}current-page{% endif %}">Pruebas externas</a></li>
